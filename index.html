@@ -1,1 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>EURO SHOP 1230 – Breitenfurter Straße</title>
+  <meta name="description" content="EURO SHOP 1230 – Ihr Euroshop in Wien 1230. Große Auswahl, freundliches Personal und faire Preise.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #e65f32;
+    }
+
+    nav a {
+      color: #222;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #e65f32;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("images/IMG_3725.jpeg") center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      margin-bottom: 15px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #e65f32;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #d84e24;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #666;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #e65f32;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .contact {
+      background: #222;
+      color: white;
+      max-width: none;
+      text-align: center;
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 55px 15px;
+      }
+
+      .gallery img {
+        height: 230px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">EURO SHOP 1230</div>
+
+    <div>
+      <a href="#start">Start</a>
+      <a href="#sortiment">Sortiment</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+</header>
+
+
+<section class="hero" id="start">
+  <div class="hero-content">
+
+    <h1>EURO SHOP 1230</h1>
+
+    <p>
+      Große Auswahl · Faire Preise · Freundliches Personal
+    </p>
+
+    <a class="button" href="#sortiment">Sortiment ansehen</a>
+
+    <a class="button" href="#kontakt">Kontakt & Öffnungszeiten</a>
+
+  </div>
+</section>
+
+
+<section id="ueber-uns">
+
+  <h2 class="section-title">Willkommen bei EURO SHOP 1230</h2>
+
+  <p class="section-text">
+    Entdecke unseren Euro-Shop in Wien 1230 mit einer großen Auswahl
+    an verschiedenen Produkten für den täglichen Bedarf.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="card">
+      <h3>🛍️ Große Auswahl</h3>
+      <p>
+        Viele verschiedene Produkte und praktische Dinge für den Alltag.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💶 Faire Preise</h3>
+      <p>
+        Attraktive Preise und eine große Auswahl für jeden Bedarf.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>😊 Freundliches Personal</h3>
+      <p>
+        Nettes Personal und persönliche Beratung direkt vor Ort.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="sortiment">
+
+  <h2 class="section-title">Unser Sortiment</h2>
+
+  <p class="section-text">
+    Hier bekommst du einen kleinen Einblick in unseren Shop.
+  </p>
+
+  <div class="gallery">
+
+    <img src="images/IMG_3725.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3726.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3727.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3728.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3729.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3730.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3731.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3732.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3733.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3734.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3735.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3736.jpeg" alt="EURO SHOP 1230">
+    <img src="images/IMG_3737.jpeg" alt="EURO SHOP 1230">
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="kontakt">
+
+  <div class="contact-inner">
+
+    <h2>Besuch uns in Wien 1230</h2>
+
+    <p>📍 Breitenfurter Straße 246, 1230 Wien</p>
+
+    <br>
+
+    <h3>Öffnungszeiten</h3>
+
+    <p>Montag – Freitag: 08:30 – 18:00 Uhr</p>
+    <p>Samstag: 09:00 – 14:30 Uhr</p>
+
+    <br>
+
+    <p>
+      Wir freuen uns auf deinen Besuch!
+    </p>
+
+    <br>
+
+    <a
+      class="button"
+      href="https://www.google.com/maps/search/?api=1&query=Breitenfurter+Straße+246+1230+Wien"
+      target="_blank">
+      📍 Route auf Google Maps
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  © 2026 EURO SHOP 1230 · Breitenfurter Straße 246 · Wien
+
+</footer>
+
+</body>
+</html>
