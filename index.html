@@ -1,1 +1,763 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>EURO SHOP 1230 – Breitenfurter Straße</title>
+
+<meta name="description" content="EURO SHOP 1230 in Wien – großes Sortiment an Wolle, Taschen, Schmuck, Accessoires, Haushaltswaren und mehr.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,.2);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #d99b00;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #d99b00;
+}
+
+/* HERO */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
+        url("images/IMG_3725.jpeg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 82px);
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #e2a500;
+}
+
+.hero p {
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.btn-main {
+    background: #d99b00;
+    color: white;
+}
+
+.btn-main:hover {
+    background: #b77f00;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: white;
+    color: #222;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 19px;
+    margin-bottom: 45px;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.about-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* SORTIMENT */
+.sortiment {
+    background: #f4f4f4;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.09);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card-content h3 {
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+
+.card-content p {
+    color: #777;
+}
+
+/* INFO */
+.info {
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-box {
+    background: #fafafa;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.info-box h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.info-box p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* OPENING */
+.hours {
+    background: #111;
+    color: white;
+}
+
+.hours-box {
+    max-width: 700px;
+    margin: auto;
+    background: #1b1b1b;
+    padding: 40px;
+    border-radius: 25px;
+}
+
+.hour-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid #333;
+    font-size: 18px;
+}
+
+.hour-row:last-child {
+    border-bottom: none;
+}
+
+.open {
+    color: #e2a500;
+    font-weight: bold;
+}
+
+/* CONTACT */
+.contact {
+    background: #f4f4f4;
+}
+
+.contact-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding: 50px 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
+}
+
+.contact-box h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.address {
+    font-size: 20px !important;
+    color: #222 !important;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer strong {
+    color: white;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .nav {
+        padding: 15px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about img {
+        height: 330px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 280px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .hour-row {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">
+            EURO <span>SHOP 1230</span>
+        </div>
+
+        <nav>
+            <a href="#start">Start</a>
+            <a href="#sortiment">Sortiment</a>
+            <a href="#zeiten">Öffnungszeiten</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- START -->
+<section class="hero" id="start">
+    <div class="hero-content">
+
+        <h1>EURO <span>SHOP 1230</span></h1>
+
+        <p>
+            Große Auswahl · Faire Preise · Freundliches Personal
+        </p>
+
+        <div class="buttons">
+            <a href="#sortiment" class="btn btn-main">
+                Sortiment entdecken
+            </a>
+
+            <a href="#kontakt" class="btn btn-light">
+                Standort ansehen
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ÜBER UNS -->
+<section class="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <img src="images/IMG_3726.jpeg" alt="Euro Shop 1230 Sortiment">
+
+            <div class="about-text">
+
+                <h2>Willkommen im EURO SHOP 1230</h2>
+
+                <p>
+                    Entdecke unser vielseitiges Sortiment direkt in Wien.
+                    Bei uns findest du zahlreiche Produkte für den Alltag,
+                    zum Basteln, Dekorieren und vieles mehr.
+                </p>
+
+                <br>
+
+                <p>
+                    Unser freundliches Personal berät dich gerne und hilft
+                    dir dabei, das passende Produkt zu finden.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SORTIMENT -->
+<section class="sortiment" id="sortiment">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Unser Sortiment
+        </h2>
+
+        <p class="section-subtitle">
+            Entdecke unsere große Auswahl direkt vor Ort.
+        </p>
+
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/IMG_3725.jpeg" alt="Euro Shop Sortiment">
+                <div class="card-content">
+                    <h3>Parfum & Düfte</h3>
+                    <p>Verschiedene Düfte und Geschenkideen.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3726.jpeg" alt="Wolle">
+                <div class="card-content">
+                    <h3>Wolle & Handarbeit</h3>
+                    <p>Viele Farben und verschiedene Wollsorten.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3727.jpeg" alt="Wolle Sortiment">
+                <div class="card-content">
+                    <h3>Große Farbauswahl</h3>
+                    <p>Wolle und Bastelmaterial für kreative Projekte.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3728.jpeg" alt="Taschen">
+                <div class="card-content">
+                    <h3>Taschen & Accessoires</h3>
+                    <p>Praktische und schöne Accessoires.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3729.jpeg" alt="Schmuck">
+                <div class="card-content">
+                    <h3>Schmuck</h3>
+                    <p>Viele verschiedene Schmuckstücke und Anhänger.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3730.jpeg" alt="Haushaltswaren">
+                <div class="card-content">
+                    <h3>Haushalt</h3>
+                    <p>Praktische Produkte für den täglichen Gebrauch.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3731.jpeg" alt="Dekoration">
+                <div class="card-content">
+                    <h3>Dekoration</h3>
+                    <p>Ideen und Produkte für dein Zuhause.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3732.jpeg" alt="Accessoires">
+                <div class="card-content">
+                    <h3>Accessoires</h3>
+                    <p>Viele kleine Dinge zum Entdecken.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3733.jpeg" alt="Euro Shop Produkte">
+                <div class="card-content">
+                    <h3>Vielseitiges Sortiment</h3>
+                    <p>Immer wieder neue Produkte im Geschäft.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3734.jpeg" alt="Euro Shop Auswahl">
+                <div class="card-content">
+                    <h3>Für jeden etwas</h3>
+                    <p>Entdecke unser Sortiment direkt vor Ort.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3735.jpeg" alt="Euro Shop 1230">
+                <div class="card-content">
+                    <h3>Produkte entdecken</h3>
+                    <p>Große Auswahl zu attraktiven Preisen.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3736.jpeg" alt="Euro Shop Wien">
+                <div class="card-content">
+                    <h3>EURO SHOP 1230</h3>
+                    <p>Besuche uns in der Breitenfurter Straße.</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/IMG_3737.jpeg" alt="Euro Shop Sortiment Wien">
+                <div class="card-content">
+                    <h3>Schau vorbei</h3>
+                    <p>Wir freuen uns auf deinen Besuch.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFO -->
+<section class="info">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Warum EURO SHOP 1230?
+        </h2>
+
+        <p class="section-subtitle">
+            Einfach vorbeikommen und selbst entdecken.
+        </p>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <div class="icon">🛍️</div>
+                <h3>Große Auswahl</h3>
+                <p>
+                    Viele verschiedene Produkte und Kategorien
+                    für den täglichen Bedarf.
+                </p>
+            </div>
+
+
+            <div class="info-box">
+                <div class="icon">💶</div>
+                <h3>Faire Preise</h3>
+                <p>
+                    Attraktive Preise für viele verschiedene Produkte.
+                </p>
+            </div>
+
+
+            <div class="info-box">
+                <div class="icon">😊</div>
+                <h3>Freundliches Personal</h3>
+                <p>
+                    Unser nettes Personal hilft dir gerne weiter.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ÖFFNUNGSZEITEN -->
+<section class="hours" id="zeiten">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Öffnungszeiten
+        </h2>
+
+        <p class="section-subtitle" style="color:#aaa;">
+            Komm gerne bei uns vorbei.
+        </p>
+
+
+        <div class="hours-box">
+
+            <div class="hour-row">
+                <span>Montag – Freitag</span>
+                <span class="open">08:30 – 18:00</span>
+            </div>
+
+            <div class="hour-row">
+                <span>Samstag</span>
+                <span class="open">09:00 – 14:30</span>
+            </div>
+
+            <div class="hour-row">
+                <span>Sonntag</span>
+                <span>Geschlossen</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KONTAKT -->
+<section class="contact" id="kontakt">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Besuche uns</h2>
+
+            <p>
+                Du findest den EURO SHOP 1230 in Wien.
+            </p>
+
+            <p class="address">
+                📍 Breitenfurter Straße 246<br>
+                1230 Wien, Österreich
+            </p>
+
+            <br>
+
+            <a
+                class="btn btn-main"
+                href="https://www.google.com/maps/search/?api=1&query=Breitenfurter%20Straße%20246%2C%201230%20Wien"
+                target="_blank"
+            >
+                📍 Route auf Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © <span id="year"></span>
+        <strong>EURO SHOP 1230</strong>
+        – Alle Rechte vorbehalten.
+    </p>
+
+    <br>
+
+    <p>
+        Breitenfurter Straße 246 · 1230 Wien
+    </p>
+
+</footer>
+
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
