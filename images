@@ -1,1 +1,29 @@
+<div class="gallery">
+  <img src="images/IMG_3725.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3726.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3727.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3728.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3729.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3730.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3731.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3732.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3733.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3734.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3735.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3736.jpeg" alt="EURO SHOP 1230">
+  <img src="images/IMG_3737.jpeg" alt="EURO SHOP 1230">
+</div>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
 
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
+}
