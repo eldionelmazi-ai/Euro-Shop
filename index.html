@@ -1,776 +1,815 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Euro Shop 1230 Wien | Breitenfurterstraße 246</title>
-
-  <meta name="description" content="Euro Shop 1230 Wien – große Auswahl an Mode, Taschen, Koffern, Kunstblumen, Wolle, Sonnenbrillen, Parfüm, Accessoires und vielem mehr.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #102f47;
-      background: #f7f9fa;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* NAVIGATION */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: white;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: #f2c400;
-    }
-
-    .logo small {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 4px;
-      color: #587080;
-      text-align: center;
-    }
-
-    .menu {
-      display: flex;
-      gap: 25px;
-      font-weight: 600;
-    }
-
-    .menu a:hover {
-      color: #f0b900;
-    }
-
-    .phone {
-      background: #08ad65;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 650px;
-      background:
-        linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
-        url("images/IMG_3737.jpeg") center/cover;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 60px 25px;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 0.95;
-      max-width: 750px;
-      margin: 15px 0 25px;
-    }
-
-    .hero h2 {
-      font-size: 22px;
-      max-width: 600px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-weight: bold;
-    }
-
-    .btn-yellow {
-      background: #ffd21c;
-      color: #102f47;
-    }
-
-    .btn-white {
-      background: white;
-      color: #102f47;
-    }
-
-    /* INFO */
-
-    .info {
-      max-width: 1150px;
-      margin: -55px auto 50px;
-      position: relative;
-      background: white;
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .info-box {
-      padding: 10px;
-    }
-
-    .info-box h3 {
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .info-box p {
-      color: #526875;
-    }
-
-    /* SECTIONS */
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 70px 25px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 44px;
-      margin-bottom: 10px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #657883;
-      margin-bottom: 40px;
-      font-size: 18px;
-    }
-
-    /* SORTIMENT */
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-    }
-
-    .product {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: 0.25s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
-
-    .product-text {
-      padding: 18px;
-      text-align: center;
-    }
-
-    .product h3 {
-      font-size: 19px;
-      margin-bottom: 5px;
-    }
-
-    .product p {
-      color: #687983;
-      font-size: 14px;
-    }
-
-    /* ÜBER UNS */
-
-    .about {
-      background: #073451;
-      color: white;
-      max-width: none;
-      padding: 75px 8%;
-    }
-
-    .about-inner {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .about h2 {
-      font-size: 45px;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      font-size: 17px;
-      color: #e3edf2;
-      margin-bottom: 18px;
-    }
-
-    .about img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-      border-radius: 22px;
-    }
-
-    .highlight {
-      color: #ffd21c;
-      font-weight: bold;
-    }
-
-    /* GALERIE */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 18px;
-      transition: 0.25s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.02);
-    }
-
-    /* KONTAKT */
-
-    .contact {
-      background: white;
-      border-radius: 25px;
-      padding: 45px;
-      text-align: center;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-    }
-
-    .contact h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .contact p {
-      margin: 8px 0;
-      font-size: 17px;
-    }
-
-    .contact-buttons {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #062b43;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-      margin-top: 50px;
-    }
-
-    footer p {
-      color: #cbd9e0;
-      margin-top: 8px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-
-      .menu {
-        display: none;
-      }
-
-      .info {
-        grid-template-columns: repeat(2, 1fr);
-        margin: 20px;
-      }
-
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 550px) {
-
-      .nav {
-        padding: 14px 15px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .phone {
-        padding: 9px 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        min-height: 580px;
-      }
-
-      .hero-content {
-        padding: 40px 20px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero h2 {
-        font-size: 18px;
-      }
-
-      .info {
-        grid-template-columns: 1fr;
-        margin: 15px;
-        padding: 20px;
-      }
-
-      section {
-        padding: 55px 18px;
-      }
-
-      .section-title {
-        font-size: 35px;
-      }
-
-      .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-
-      .product img {
-        height: 150px;
-      }
-
-      .product-text {
-        padding: 12px 8px;
-      }
-
-      .product h3 {
-        font-size: 16px;
-      }
-
-      .about {
-        padding: 55px 20px;
-      }
-
-      .about h2 {
-        font-size: 36px;
-      }
-
-      .about img {
-        height: 300px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery img {
-        height: 300px;
-      }
-
-      .contact {
-        padding: 30px 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EURO SHOP 1230 – Breitenfurter Straße</title>
+
+    <meta name="description"
+          content="EURO SHOP 1230 in Wien – großes Sortiment an Wolle, Bastelartikeln, Kleidung, Accessoires, Schmuck, Parfum, Taschen, Koffern und mehr.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fafafa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #111;
+        }
+
+        .logo span {
+            color: #d89b00;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        nav ul a:hover {
+            color: #d89b00;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background:
+                linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+                url("IMG_3725.jpeg") center/cover no-repeat;
+            color: white;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 82px);
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffd15c;
+        }
+
+        .hero p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.25s;
+        }
+
+        .btn-main {
+            background: #d89b00;
+            color: white;
+        }
+
+        .btn-main:hover {
+            background: #b98200;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: white;
+            color: #222;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-2px);
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 17px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        /* SORTIMENT */
+
+        .sortiment {
+            background: #f5f5f5;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* GALERIE */
+
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 300px 300px;
+            gap: 18px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* OPENING HOURS */
+
+        .hours-section {
+            background: #171717;
+            color: white;
+        }
+
+        .hours-box {
+            max-width: 750px;
+            margin: auto;
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 22px;
+            padding: 35px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid #444;
+            font-size: 18px;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-row strong {
+            color: #ffd15c;
+        }
+
+        /* FEATURES */
+
+        .features {
+            background: #f5f5f5;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            text-align: center;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            background: linear-gradient(135deg, #171717, #303030);
+            color: white;
+            padding: 55px 25px;
+            border-radius: 25px;
+        }
+
+        .contact-box h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #ddd;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .address {
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0e0e0e;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            nav {
+                height: 65px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 350px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 300px 250px 250px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: auto;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .hours-row {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <header>
-  <nav class="nav">
+    <nav>
+        <div class="logo">
+            EURO <span>SHOP 1230</span>
+        </div>
 
-    <a href="#" class="logo">
-      🛒 EURO <span>SHOP</span>
-      <small>1230 WIEN</small>
-    </a>
-
-    <div class="menu">
-      <a href="#">Startseite</a>
-      <a href="#sortiment">Sortiment</a>
-      <a href="#ueber-uns">Über uns</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-
-    <a class="phone" href="tel:06605500704">
-      ☎ 0660 5500704
-    </a>
-
-  </nav>
+        <ul>
+            <li><a href="#start">Startseite</a></li>
+            <li><a href="#sortiment">Sortiment</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#zeiten">Öffnungszeiten</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
 </header>
 
 
-<!-- STARTSEITE -->
+<!-- HERO -->
 
-<div class="hero">
+<section class="hero" id="start">
 
-  <div class="hero-content">
+    <div class="hero-content">
 
-    <p>WILLKOMMEN BEI</p>
+        <h1>
+            EURO <span>SHOP 1230</span>
+        </h1>
 
-    <h1>EURO SHOP<br>1230</h1>
+        <p>
+            Entdecke unser vielseitiges Sortiment in Wien-Liesing.
+            Von Wolle und Bastelartikeln bis zu Accessoires,
+            Taschen, Schmuck und vielem mehr.
+        </p>
 
-    <h2>
-      Große Auswahl, faire Preise und vieles für den Alltag –
-      direkt in Wien-Liesing.
-    </h2>
+        <div class="buttons">
+            <a class="btn btn-main" href="#sortiment">
+                Sortiment entdecken
+            </a>
 
-    <div class="hero-buttons">
-
-      <a class="btn btn-yellow"
-         href="https://www.google.com/maps/search/?api=1&query=Breitenfurterstraße+246,+1230+Wien"
-         target="_blank">
-        📍 Route anzeigen
-      </a>
-
-      <a class="btn btn-white" href="tel:06605500704">
-        ☎ Jetzt anrufen
-      </a>
+            <a class="btn btn-light" href="#kontakt">
+                So findest du uns
+            </a>
+        </div>
 
     </div>
-
-  </div>
-
-</div>
-
-
-<!-- INFORMATIONEN -->
-
-<div class="info">
-
-  <div class="info-box">
-    <h3>📍 Adresse</h3>
-    <p>
-      Breitenfurterstraße 246<br>
-      1230 Wien
-    </p>
-  </div>
-
-  <div class="info-box">
-    <h3>🕐 Öffnungszeiten</h3>
-    <p>
-      Montag – Freitag<br>
-      08:30 – 18:00 Uhr<br><br>
-      Samstag<br>
-      09:00 – 14:30 Uhr
-    </p>
-  </div>
-
-  <div class="info-box">
-    <h3>☎ Telefon</h3>
-    <p>
-      0660 5500704
-    </p>
-  </div>
-
-  <div class="info-box">
-    <h3>🤝 Unser Service</h3>
-    <p>
-      Gute Verkäufer<br>
-      Nettes Personal<br>
-      Große Auswahl
-    </p>
-  </div>
-
-</div>
-
-
-<!-- SORTIMENT -->
-
-<section id="sortiment">
-
-  <h2 class="section-title">Unser Sortiment</h2>
-
-  <p class="section-subtitle">
-    Entdecken Sie unsere große Auswahl an Produkten für Alltag,
-    Mode, Zuhause und vieles mehr.
-  </p>
-
-  <div class="products">
-
-    <div class="product">
-      <img src="images/IMG_3736.jpeg">
-      <div class="product-text">
-        <h3>🌸 Kunstblumen</h3>
-        <p>Dekorativ & vielseitig</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3731.jpeg">
-      <div class="product-text">
-        <h3>👜 Taschen</h3>
-        <p>Modisch & praktisch</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3732.jpeg">
-      <div class="product-text">
-        <h3>👗 Mode & Kleidung</h3>
-        <p>Für Damen und Herren</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3733.jpeg">
-      <div class="product-text">
-        <h3>🧳 Koffer</h3>
-        <p>Reise praktisch & stilvoll</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3729.jpeg">
-      <div class="product-text">
-        <h3>🧶 Wolle</h3>
-        <p>Für kreative Projekte</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3730.jpeg">
-      <div class="product-text">
-        <h3>🕶️ Sonnenbrillen</h3>
-        <p>Stylische Auswahl</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3728.jpeg">
-      <div class="product-text">
-        <h3>🌺 Parfüme</h3>
-        <p>Verschiedene Düfte</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3734.jpeg">
-      <div class="product-text">
-        <h3>🏠 Haushaltsartikel</h3>
-        <p>Praktisch für den Alltag</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3735.jpeg">
-      <div class="product-text">
-        <h3>🎁 Accessoires</h3>
-        <p>Viele schöne Artikel</p>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="images/IMG_3737.jpeg">
-      <div class="product-text">
-        <h3>✨ Vieles mehr</h3>
-        <p>Vorbeikommen & entdecken</p>
-      </div>
-    </div>
-
-  </div>
 
 </section>
 
 
 <!-- ÜBER UNS -->
 
-<div class="about" id="ueber-uns">
+<section class="about">
 
-  <div class="about-inner">
+    <div class="container">
 
-    <div>
+        <div class="about-grid">
 
-      <h2>Über uns</h2>
+            <div class="about-text">
 
-      <p>
-        Willkommen beim <strong>Euro Shop 1230</strong> in der
-        Breitenfurterstraße 246 in Wien.
-      </p>
+                <h2>
+                    Willkommen im<br>
+                    EURO SHOP 1230
+                </h2>
 
-      <p>
-        Bei uns finden Sie eine große Auswahl an
-        <strong>Mode, Taschen, Kleidung, Koffern,
-        Kunstblumen, Wolle, Sonnenbrillen, Parfümen,
-        Accessoires</strong> und vielen weiteren Artikeln.
-      </p>
+                <p>
+                    Bei uns findest du ein großes und vielseitiges
+                    Sortiment für den Alltag, für kreative Projekte
+                    und zum Stöbern.
+                </p>
 
-      <p>
-        Wir legen Wert auf eine freundliche Beratung,
-        gute Verkäufer und ein angenehmes Einkaufserlebnis.
-      </p>
+                <p>
+                    Ob Wolle, Bastelbedarf, Kleidung, Schmuck,
+                    Taschen, Koffer, Parfum oder verschiedene
+                    Accessoires – bei uns gibt es immer etwas zu entdecken.
+                </p>
 
-      <p class="highlight">
-        Kommen Sie vorbei – wir freuen uns auf Ihren Besuch!
-      </p>
+                <p>
+                    Unser freundliches Personal berät dich gerne
+                    und hilft dir bei der Suche nach dem passenden Produkt.
+                </p>
+
+            </div>
+
+            <div class="about-image">
+                <img src="IMG_3725.jpeg" alt="EURO SHOP 1230 Sortiment">
+            </div>
+
+        </div>
 
     </div>
 
-    <img src="images/IMG_3733.jpeg">
+</section>
 
-  </div>
 
-</div>
+<!-- SORTIMENT -->
+
+<section class="sortiment" id="sortiment">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Unser Sortiment</h2>
+            <p>
+                Entdecke unsere große Auswahl direkt vor Ort.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🧶</div>
+                <h3>Wolle & Handarbeit</h3>
+                <p>
+                    Große Auswahl an Wolle und verschiedenen
+                    Farben für deine kreativen Projekte.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Basteln & Kreativ</h3>
+                <p>
+                    Verschiedene Artikel zum Basteln,
+                    Gestalten und Dekorieren.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">👗</div>
+                <h3>Kleidung</h3>
+                <p>
+                    Verschiedene Kleidungsstücke und
+                    modische Artikel.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💎</div>
+                <h3>Schmuck & Accessoires</h3>
+                <p>
+                    Schmuck, Anhänger, Accessoires und
+                    viele kleine Geschenkideen.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🧳</div>
+                <h3>Taschen & Koffer</h3>
+                <p>
+                    Praktische Taschen, Koffer und
+                    Reiseartikel in verschiedenen Designs.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌸</div>
+                <h3>Parfum & Düfte</h3>
+                <p>
+                    Verschiedene Düfte und Parfumartikel
+                    für Damen und Herren.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- GALERIE -->
 
-<section id="galerie">
+<section class="gallery" id="galerie">
 
-  <h2 class="section-title">Galerie</h2>
+    <div class="container">
 
-  <p class="section-subtitle">
-    Ein kleiner Einblick in unseren Euro Shop.
-  </p>
+        <div class="section-title">
+            <h2>Ein Blick in unseren Shop</h2>
+            <p>
+                Entdecke einen Teil unseres Sortiments.
+            </p>
+        </div>
 
-  <div class="gallery">
+        <div class="gallery-grid">
 
-    <img src="images/IMG_3737.jpeg">
-    <img src="images/IMG_3736.jpeg">
-    <img src="images/IMG_3735.jpeg">
-    <img src="images/IMG_3734.jpeg">
-    <img src="images/IMG_3733.jpeg">
-    <img src="images/IMG_3732.jpeg">
-    <img src="images/IMG_3731.jpeg">
-    <img src="images/IMG_3730.jpeg">
-    <img src="images/IMG_3729.jpeg">
-    <img src="images/IMG_3728.jpeg">
+            <div class="gallery-item">
+                <img
+                    src="IMG_3725.jpeg"
+                    alt="EURO SHOP 1230 Parfum Schmuck Taschen">
+            </div>
 
-  </div>
+            <div class="gallery-item">
+                <img
+                    src="IMG_3726.jpeg"
+                    alt="EURO SHOP 1230 Wolle Sortiment">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="IMG_3727.jpeg"
+                    alt="EURO SHOP 1230 Wolle und Handarbeit">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ÖFFNUNGSZEITEN -->
+
+<section class="hours-section" id="zeiten">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Öffnungszeiten</h2>
+            <p style="color:#bbb;">
+                Wir freuen uns auf deinen Besuch.
+            </p>
+        </div>
+
+        <div class="hours-box">
+
+            <div class="hours-row">
+                <span>Montag – Freitag</span>
+                <strong>08:30 – 18:00</strong>
+            </div>
+
+            <div class="hours-row">
+                <span>Samstag</span>
+                <strong>09:00 – 14:30</strong>
+            </div>
+
+            <div class="hours-row">
+                <span>Sonntag</span>
+                <strong>Geschlossen</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WARUM ZU UNS -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Warum EURO SHOP 1230?</h2>
+            <p>
+                Persönlicher Service und eine große Auswahl.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">😊</div>
+                <h3>Freundliches Personal</h3>
+                <p>
+                    Unser Team hilft dir gerne bei Fragen
+                    und bei der Suche nach passenden Produkten.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🛍️</div>
+                <h3>Große Auswahl</h3>
+                <p>
+                    Viele verschiedene Produkte für
+                    Alltag, Haushalt, Hobby und mehr.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📍</div>
+                <h3>In Wien 1230</h3>
+                <p>
+                    Du findest uns auf der
+                    Breitenfurter Straße.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- KONTAKT -->
 
-<section id="kontakt">
+<section class="contact" id="kontakt">
 
-  <div class="contact">
+    <div class="container">
 
-    <h2>Besuchen Sie uns</h2>
+        <div class="contact-box">
 
-    <p>📍 Breitenfurterstraße 246, 1230 Wien</p>
+            <h2>Besuche uns</h2>
 
-    <p>☎ 0660 5500704</p>
+            <p>
+                Komm vorbei und entdecke unser Sortiment
+                direkt in unserem Geschäft.
+            </p>
 
-    <p>
-      🕐 Montag – Freitag: 08:30 – 18:00 Uhr
-    </p>
+            <div class="address">
+                📍 <strong>Breitenfurter Straße 246</strong><br>
+                1230 Wien, Österreich
+            </div>
 
-    <p>
-      🕐 Samstag: 09:00 – 14:30 Uhr
-    </p>
+            <a class="btn btn-main"
+               href="#zeiten">
+                Öffnungszeiten ansehen
+            </a>
 
-    <div class="contact-buttons">
-
-      <a class="btn btn-yellow"
-         href="https://www.google.com/maps/search/?api=1&query=Breitenfurterstraße+246,+1230+Wien"
-         target="_blank">
-        📍 Route anzeigen
-      </a>
-
-      <a class="btn btn-white"
-         href="tel:06605500704">
-        ☎ 0660 5500704
-      </a>
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-  <h3>EURO SHOP 1230 WIEN</h3>
+    <p>
+        © <span id="year"></span>
+        <strong>EURO SHOP 1230</strong>
+        – Alle Rechte vorbehalten.
+    </p>
 
-  <p>
-    Breitenfurterstraße 246 · 1230 Wien
-  </p>
-
-  <p>
-    © 2026 Euro Shop 1230 · Alle Rechte vorbehalten
-  </p>
+    <p>
+        Breitenfurter Straße 246 · 1230 Wien
+    </p>
 
 </footer>
+
+
+<script>
+
+    // Aktuelles Jahr automatisch einsetzen
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
